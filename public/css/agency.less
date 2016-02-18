@@ -1,3 +1,17 @@
+// Variables
+@alt-bg: screen(@brand-primary, @gray);
+@brand-primary: #F25F43;
+@brand-active: saturate(darken(@brand-primary, 10%), 100%);
+@brand-hilite: saturate(darken(@brand-primary, 20%), 100%);
+@gray: darken(desaturate(@brand-primary, 100%), 30%);
+@gray-dark: darken(@gray, 30%);
+@gray-lite: lighten(@gray, 65%);
+@text-danger: overlay(@brand-primary, @gray-dark);
+@text-placeholder: lighten(@gray, 40%);
+@timeline: lighten(@gray, 35%);
+@white: #FFFFFF;
+@white-ish: #FFFFFF;
+
 @font-face {
   font-family: Pacifica;
   src: url("../fonts/Pacifica Condensed Regular.ttf");
@@ -8,16 +22,15 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
-
 body {
   overflow-x: hidden;
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .text-muted {
-  color: #777777;
+  color: @gray;
 }
 .text-primary {
-  color: #f25f43;
+  color: @brand-primary;
 }
 p {
   font-size: 14px;
@@ -34,13 +47,13 @@ a.active {
   outline: none;
 }
 a {
-  color: #f25f43;
+  color: @brand-primary;
 }
 a:hover,
 a:focus,
 a:active,
 a.active {
-  color: #fec503;
+  color: @brand-active;
 }
 h1,
 h2,
@@ -56,15 +69,15 @@ h6 {
   margin: 0 auto;
 }
 .bg-light-gray {
-  background-color: #f7f7f7;
+  background-color: @gray-lite;
 }
 .bg-darkest-gray {
-  background-color: #222222;
+  background-color: @gray-dark;
 }
 .btn-primary {
-  color: #ffffff;
-  background-color: #f25f43;
-  border-color: #f25f43;
+  color: @white;
+  background-color: @brand-primary;
+  border-color: @brand-primary;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -74,9 +87,9 @@ h6 {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-  color: #ffffff;
-  background-color: #fec503;
-  border-color: #f6bf01;
+  color: @white;
+  background-color: @brand-active;
+  border-color: @brand-hilite;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -98,17 +111,17 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #f25f43;
-  border-color: #f25f43;
+  background-color: @brand-primary;
+  border-color: @brand-primary;
 }
 .btn-primary .badge {
-  color: #f25f43;
-  background-color: #ffffff;
+  color: @brand-primary;
+  background-color: @white;
 }
 .btn-xl {
-  color: #ffffff;
-  background-color: #f25f43;
-  border-color: #f25f43;
+  color: @white;
+  background-color: @brand-primary;
+  border-color: @brand-primary;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -121,9 +134,9 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl:active,
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
-  color: #ffffff;
-  background-color: #fec503;
-  border-color: #f6bf01;
+  color: @white;
+  background-color: @brand-active;
+  border-color: @brand-hilite;
 }
 .btn-xl:active,
 .btn-xl.active,
@@ -145,40 +158,40 @@ fieldset[disabled] .btn-xl:active,
 .btn-xl.disabled.active,
 .btn-xl[disabled].active,
 fieldset[disabled] .btn-xl.active {
-  background-color: #f25f43;
-  border-color: #f25f43;
+  background-color: @brand-primary;
+  border-color: @brand-primary;
 }
 .btn-xl .badge {
-  color: #f25f43;
-  background-color: #ffffff;
+  color: @brand-primary;
+  background-color: @white;
 }
 .navbar-default {
-  background-color: #222222;
+  background-color: @gray-dark;
   border-color: transparent;
 }
 .navbar-default .navbar-brand {
-  color: #f25f43;
+  color: @brand-primary;
   font-family: "Pacifica", "Helvetica Neue", Helvetica, Arial, cursive;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
-  color: #fec503;
+  color: @brand-active;
 }
 .navbar-default .navbar-collapse {
   border-color: rgba(255, 255, 255, 0.02);
 }
 .navbar-default .navbar-toggle {
-  background-color: #f25f43;
-  border-color: #f25f43;
+  background-color: @brand-primary;
+  border-color: @brand-primary;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: white;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #f25f43;
+  background-color: @brand-primary;
 }
 .navbar-default .nav li a {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -189,18 +202,18 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
-  color: #f25f43;
+  color: @brand-primary;
   outline: none;
 }
 .navbar-default .navbar-nav > .active > a {
   border-radius: 0;
   color: white;
-  background-color: #f25f43;
+  background-color: @brand-primary;
 }
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: white;
-  background-color: #fec503;
+  background-color: @brand-active;
 }
 @media (min-width: 768px) {
   .navbar-default {
@@ -221,7 +234,7 @@ fieldset[disabled] .btn-xl.active {
     border-radius: 3px;
   }
   .navbar-default.navbar-shrink {
-    background-color: #222222;
+    background-color: @gray-dark;
     padding: 10px 0;
   }
   .navbar-default.navbar-shrink .navbar-brand {
@@ -381,7 +394,7 @@ section h3.section-subheading {
   position: absolute;
   content: "";
   width: 2px;
-  background-color: #f1f1f1;
+  background-color: @timeline;
   left: 40px;
   margin-left: -1.5px;
 }
@@ -424,10 +437,10 @@ section h3.section-subheading {
   height: 80px;
   position: absolute;
   z-index: 100;
-  background-color: #f25f43;
+  background-color: @brand-primary;
   color: white;
   border-radius: 100%;
-  border: 7px solid #f1f1f1;
+  border: 7px solid @timeline;
   text-align: center;
 }
 .timeline > li .timeline-image h4 {
@@ -557,7 +570,7 @@ aside.clients img {
   margin: 50px auto;
 }
 section#contact {
-  background-color: #222222;
+  background-color: @gray-dark;
   background-image: url('../img/map-image.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -579,37 +592,37 @@ section#contact .form-group textarea.form-control {
   height: 236px;
 }
 section#contact .form-control:focus {
-  border-color: #f25f43;
+  border-color: @brand-primary;
   box-shadow: none;
 }
 section#contact ::-webkit-input-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  color: #bbbbbb;
+  color: @text-placeholder;
 }
 section#contact :-moz-placeholder {
   /* Firefox 18- */
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  color: #bbbbbb;
+  color: @text-placeholder;
 }
 section#contact ::-moz-placeholder {
   /* Firefox 19+ */
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  color: #bbbbbb;
+  color: @text-placeholder;
 }
 section#contact :-ms-input-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  color: #bbbbbb;
+  color: @text-placeholder;
 }
 section#contact .text-danger {
-  color: #e74c3c;
+  color: @text-danger;
 }
 footer {
   padding: 25px 0;
@@ -633,7 +646,7 @@ ul.social-buttons {
 }
 ul.social-buttons li a {
   display: block;
-  background-color: #222222;
+  background-color: @gray-dark;
   height: 40px;
   width: 40px;
   border-radius: 100%;
@@ -648,7 +661,7 @@ ul.social-buttons li a {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-  background-color: #f25f43;
+  background-color: @brand-primary;
 }
 .btn:focus,
 .btn:active,
@@ -702,7 +715,7 @@ ul.social-buttons li a:active {
   height: 75px;
   width: 1px;
   margin-left: 35px;
-  background-color: #222222;
+  background-color: @gray-dark;
   transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   /* IE 9 */
@@ -713,7 +726,7 @@ ul.social-buttons li a:active {
 .portfolio-modal .close-modal .lr .rl {
   height: 75px;
   width: 1px;
-  background-color: #222222;
+  background-color: @gray-dark;
   transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   /* IE 9 */
@@ -727,11 +740,11 @@ ul.social-buttons li a:active {
 }
 ::-moz-selection {
   text-shadow: none;
-  background: #f25f43;
+  background: @brand-primary;
 }
 ::selection {
   text-shadow: none;
-  background: #f25f43;
+  background: @brand-primary;
 }
 img::selection {
   background: transparent;
@@ -740,5 +753,5 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: #f25f43;
+  webkit-tap-highlight-color: @brand-primary;
 }
