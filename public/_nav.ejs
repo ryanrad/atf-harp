@@ -16,20 +16,17 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-              <li class="hidden">
-                  <a href="#page-top"></a>
+              <li class="<%- current.source == 'train' ? 'active' : '' %>">
+                <a class="page-scroll" href="train">Train</a>
               </li>
-              <li>
-                  <a class="page-scroll" href="train">Train</a>
+              <li class="<%- current.source == 'team' ? 'active' : '' %>">
+                <a class="page-scroll" href="team">Team</a>
               </li>
-              <li>
-                  <a class="page-scroll" href="team">Team</a>
+              <li class="<%- current.source == 'contact' ? 'active' : '' %>">
+                <a class="page-scroll" href="contact">Contact</a>
               </li>
-              <li>
-                  <a class="page-scroll" href="contact">Contact</a>
-              </li>
-              <li>
-                  <a class="page-scroll" href="support">Support ATF</a>
+              <li class="<%- current.source == 'support' ? 'active' : '' %>">
+                <a class="page-scroll" href="support">Support ATF</a>
               </li>
           </ul>
       </div>
