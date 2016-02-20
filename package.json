@@ -8,6 +8,10 @@
     "type": "MIT",
     "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanrad/atf-harp"
+  },
   "dependencies": {
     "harp": "*"
   },
@@ -19,8 +23,7 @@
     "grunt-contrib-uglify": "~0.5.1",
     "grunt-contrib-watch": "~0.6.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ryanrad/atf-harp"
+  "engines": {
+    "node": "5.6.0"
   }
 }
